@@ -5,7 +5,6 @@ const MainProducts = ({
   decrement,
   removeProduct,
   getTotalPrice,
-  deleted,
 }) => {
   return (
     <>
@@ -19,7 +18,9 @@ const MainProducts = ({
         />
       ))}
       <h1 className='font-bold text-red-800 text-2xl'>
-        {deleted ? `Cart is empty` : `Total Price : ${getTotalPrice()}$`}
+        {!products.length
+          ? `Cart is empty`
+          : `Total Price : ${getTotalPrice()}$`}
       </h1>
     </>
   )

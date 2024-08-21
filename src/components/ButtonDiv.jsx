@@ -1,7 +1,7 @@
 import { CiSun } from 'react-icons/ci'
 import { FaRegMoon } from 'react-icons/fa'
 
-const ButtonDiv = ({ products, setProducts, setDeleted, dark, setDark }) => {
+const ButtonDiv = ({ products, setProducts, dark, setDark }) => {
   // handlers
   const resetHandler = products => {
     setProducts(
@@ -11,10 +11,6 @@ const ButtonDiv = ({ products, setProducts, setDeleted, dark, setDark }) => {
     )
   }
 
-  const deleteHandler = () => {
-    setProducts([])
-    setDeleted(true)
-  }
   const setTheme = dark => setDark(!dark)
   return (
     <div className='mb-8'>
@@ -26,7 +22,10 @@ const ButtonDiv = ({ products, setProducts, setDeleted, dark, setDark }) => {
         >
           Reset
         </button>
-        <button className='btn btn-error font-bold' onClick={deleteHandler}>
+        <button
+          className='btn btn-error font-bold'
+          onClick={() => setProducts([])}
+        >
           Delete All
         </button>
         <button

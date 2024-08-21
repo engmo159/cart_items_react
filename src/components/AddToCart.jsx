@@ -1,4 +1,4 @@
-const AddToCart = ({ addProducts, products, setProducts, setDeleted }) => {
+const AddToCart = ({ addProducts, products, setProducts }) => {
   const addProductsHandler = (newProduct, products, setProducts) => {
     let productExist = products.some(obj => obj.id === newProduct.id)
     productExist
@@ -8,7 +8,6 @@ const AddToCart = ({ addProducts, products, setProducts, setDeleted }) => {
           )
         )
       : setProducts([...products, newProduct])
-    products.length && setDeleted(false)
   }
 
   return (

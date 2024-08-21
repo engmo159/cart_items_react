@@ -19,7 +19,6 @@ function App() {
     { id: 3, name: 'cigarets', price: 300, items: 1 },
     { id: 4, name: 'kranshi', price: 400, items: 1 },
   ])
-  const [deleted, setDeleted] = useState(false)
   const [dark, setDark] = useState(false)
   //handle local storage for themes
   useEffect(() => {
@@ -71,12 +70,10 @@ function App() {
         addProducts={addProducts}
         products={products}
         setProducts={setProducts}
-        setDeleted={setDeleted}
       />
       <ButtonDiv
         products={products}
         setProducts={setProducts}
-        setDeleted={setDeleted}
         dark={dark}
         setDark={setDark}
       />
@@ -86,7 +83,6 @@ function App() {
         products={products}
         removeProduct={removeProduct}
         getTotalPrice={getTotalPrice}
-        deleted={deleted}
       />
     </div>
   )
